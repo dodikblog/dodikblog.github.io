@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Login Form</title>
+
+    <style>
+
+      /* Style untuk elemen input */
+
+      .inputtext {
+
+        width: 100%;
+
+        margin-bottom: 15px;
+
+        padding: 10px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background-color: #f2f2f2;
+
+        font-size: 16px;
+
+        color: #333;
+
+        box-sizing: border-box;
+
+      }
+
+
+
+      /* Style untuk tombol login */
+
+      .tombol {
+
+        width: 100%;
+
+        padding: 10px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background-color: #3498db;
+
+        color: #fff;
+
+        font-size: 16px;
+
+        cursor: pointer;
+
+        text-transform: uppercase;
+
+      }
+
+
+
+      /* Style untuk kotak login */
+
+      .login-box {
+
+        width: 350px;
+
+        margin: 50px auto;
+
+        padding: 20px;
+
+        border: 1px solid #ccc;
+
+        border-radius: 20px;
+
+        background-color: #fff;
+
+        box-sizing: border-box;
+
+      }
+
+
+
+      /* Style untuk logo */
+
+      .logo {
+
+        display: block;
+
+        margin: 0 auto 30px;
+
+        width: 150px;
+
+        height: auto;
+
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body>
+
+    <div class="login-box">
+
+      <img class="logo" src="https://smknu-tulungagung.sch.id/wp-content/uploads/2018/09/logo-smknu.png" alt="Logo">
+
+      <form>
+
+        <input type="text" name="username" placeholder="Username" class="inputtext">
+
+        <input type="password" name="password" placeholder="Password" class="inputtext">
+
+        <input type="button" value="Login" class="tombol" onclick="login()">
+
+      </form>
+
+    </div>
+
+
+
+    <script>
+
+      function login() {
+ var username = document.getElementsByName("username")[0].value;
+
+  var password = document.getElementsByName("password")[0].value;
+
+  var errorMessage = document.querySelector(".error-message");
+
+
+
+  // Pasangan username dan password yang disimpan dalam array
+
+  var usernames = ["guru", "user2"];
+
+  var passwords = ["guru", "pass2"];
+
+
+
+  var isMatch = false;
+for (var i = 0; i < usernames.length; i++) {
+
+    if (username == usernames[i] && password == passwords[i]) {
+
+      isMatch = true;
+
+      break;
+
+    }
+
+  }
+
+
+
+  if (isMatch) {
+
+    window.open('https://sites.google.com/view/kursmknu/kurikulum/', '_blank');
+    //url alamat setelah berhasil login
+
+  } else {
+
+    alert("Username atau password salah!");
+
+  }
+
+}
+        
+    </script>
+
+  </body>
+
+</html>
