@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Online</title>
+    <title>Konfirmasi Peserta Ujian Sumatif</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,27 +18,19 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <p class="text-center text-red-500 mb-6">Ujian Utama akan dibuka pada hari Selasa 3 Desember 2024 sesuai jadwal</p>
         <form id="confirmationForm">
             <div class="mb-4">
                 <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
                 <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                     <option value="">Pilih Mata Pelajaran</option>
-                    <option value="X DPK TSM">X DPK TSM</option>
-                    <option value="X DPK TKJ">X DPK TKJ</option>
-                    <option value="X DPK LPKC">X DPK LPKC</option>
-                    <option value="X DPK LPKKK">X DPK LPKKK</option>
-                    <option value="X DPK DKV">X DPK DKV</option>
-                    <option value="XI KK TSM">XI KK TSM</option>
-                    <option value="XI KK TKJ">XI KK TKJ</option>
-                    <option value="XI KK AKC">XI KK AKC</option>
-                    <option value="XI KK FKK">XI KK FKK</option>
-                    <option value="XI KK DKV">XI KK DKV</option>
-                    <option value="XII KK TSM">XII KK TSM</option>
-                    <option value="XII KK TKJ">XII KK TKJ</option>
-                    <option value="XII KK AKC">XII KK AKC</option>
-                    <option value="XII KK FKK">XII KK FKK</option>
-                    <option value="XII KK DKV">XII KK DKV</option>                 
+                    <option value="X Bahasa Indonesia">X Bahasa Indonesia</option>
+                    <option value="XI Bahasa Indonesia">XI Bahasa Indonesia</option>
+                    <option value="XII Bahasa Indonesia">XII Bahasa Indonesia</option>
+                    <!--
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    
+                    -->
                 </select>
             </div>
             <div class="flex items-center justify-between">
@@ -57,36 +49,12 @@
         document.getElementById('confirmationForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const subject = document.getElementById('subject').value;
-            if (subject === 'X DPK TSM') {
-                window.location.href = '#';
-            } else if (subject === 'X DPK TKJ') {
-                window.location.href = '#';
-            } else if (subject === 'X DPK LPKC') {
-                window.location.href = '#';
-            } else if (subject === 'X DPK LPKKK') {
-                window.location.href = '#';
-            } else if (subject === 'X DPK DKV') {
-                window.location.href = '#';
-            } else if (subject === 'XI KK TSM') {
-                window.location.href = '#';
-            } else if (subject === 'XI KK TKJ') {
-                window.location.href = '#';
-            } else if (subject === 'XI KK AKC') {
-                window.location.href = '#';
-            } else if (subject === 'XI KK FKK') {
-                window.location.href = '#';
-            } else if (subject === 'XI KK DKV') {
-                window.location.href = '#';
-            } else if (subject === 'XII KK TSM') {
-                window.location.href = '#';
-            } else if (subject === 'XII KK TKJ') {
-                window.location.href = '#';
-            } else if (subject === 'XII KK AKC') {
-                window.location.href = '#';
-            } else if (subject === 'XII KK FKK') {
-                window.location.href = '#';
-            } else if (subject === 'XII KK DKV') {
-                window.location.href = '#';
+            if (subject === 'X Bahasa Indonesia') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScJJGZx2dP3BoSuXXjOLLy-FV88JBbhaGCPDYfDezihXkqLcw/viewform?usp=sf_link';
+            } else if (subject === 'XI Bahasa Indonesia') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfK0NGYYHVsKHtWidmGeNbIyzg9aYIXcQF2O76T4wbdouxK1w/viewform?usp=sf_link';
+            } else if (subject === 'XII Bahasa Indonesia') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfGaQRzVnYJ50DcpkrN2U0utfQsazVr8hqgVSiCZGpdFJO5lA/viewform?usp=sf_link';
             } 
         });
 
