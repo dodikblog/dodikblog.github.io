@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Online</title>
+    <title>Konfirmasi Peserta Ujian Sumatif</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,25 +18,9 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <form id="confirmationForm">
-            <div class="mb-4">
-                <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
-                <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    <option value="">Pilih Mata Pelajaran</option>
-                    <option value="X Pendidikan Agama Islam">X Pendidikan Agama Islam</option>
-                    <option value="XI Pendidikan Agama Islam">XI Pendidikan Agama Islam</option>
-                    <option value="XII Pendidikan Agama Islam">XII Pendidikan Agama Islam</option>
-                    <!--
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    
-                    -->
-                </select>
-            </div>
-            <div class="flex items-center justify-between">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Konfirmasi</button>
-            </div>
-        </form>
+        <div class="flex items-center justify-center">
+            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>Ujian Belum Terbuka</button>
+        </div>
     </div>
 
     <script>
@@ -46,17 +30,6 @@
             const formattedDateTime = now.toLocaleDateString('id-ID', options);
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
-        document.getElementById('confirmationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const subject = document.getElementById('subject').value;
-            if (subject === 'X Pendidikan Agama Islam') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScdP6bs--SSiPhTYplvlxy3OphlEVpAWK_V-gU4gJZKI2JphA/viewform?usp=sf_link';
-            } else if (subject === 'XI Pendidikan Agama Islam') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdXg5WIxNCctXOPguWswXysgo-4MoR9LpK2LRRNRA1ZPuh5zg/viewform?usp=sf_link';
-            } else if (subject === 'XII Pendidikan Agama Islam') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfWn2SJenhpHjvNn2RBj-9SLIWjwyIrDmoQdoYaIdI0PCZSCw/viewform?usp=sf_link';
-            } 
-        });
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
