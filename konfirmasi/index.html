@@ -23,9 +23,9 @@
                 <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
                 <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                     <option value="">Pilih Mata Pelajaran</option>
-                    <option value="X Matematika">X Matematika</option>
-                    <option value="XI Matematika">XI Matematika</option>
-                    <option value="XII Matematika">XII Matematika</option>
+                    <option value="X Pendidikan Pancasila">X Pendidikan Pancasila</option>
+                    <option value="XI Pendidikan Pancasila">XI Pendidikan Pancasila</option>
+                    <option value="XII Pendidikan Pancasila">XII Pendidikan Pancasila</option>
                     <!--
                     <option value="B">B</option>
                     <option value="C">C</option>
@@ -49,12 +49,12 @@
         document.getElementById('confirmationForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const subject = document.getElementById('subject').value;
-            if (subject === 'X Matematika') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSe4rlveX1RrlX6pH5FxezEqKE4QlijWSBnHyj1nZwIT3Osgzw/viewform?usp=sf_link';
-            } else if (subject === 'XI Matematika') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfJiihdkezS21qYrHpnJsurDklu_BuXJJpdAdWkkyYoFHFXdw/viewform?usp=sf_link';
-            } else if (subject === 'XII Matematika') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdZ0BzA0h6fUAjoGjeqaLbRQOMDv0gvi9HlKu5_6XYSQkErJQ/viewform?usp=sf_link';
+            if (subject === 'X Pendidikan Pancasila') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSenXRYxaAJ57nKzLfqg2okZ0POFoWUa6c0K1JVSCPBoRpdZ1w/viewform?usp=sf_link';
+            } else if (subject === 'XI Pendidikan Pancasila') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeH_pBoHKEG3CM-Gf2_HuUSuSjpaGRBSvNa5w6epCSGfFiq0A/viewform?usp=sf_link';
+            } else if (subject === 'XII Pendidikan Pancasila') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScP0K00wucyN5Knf_asJr8N9YGTIG1Ap7Xm_yYU7OKVYm2uuA/viewform?usp=sf_link';
             } 
         });
 
