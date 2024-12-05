@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Sumatif</title>
+    <title>Konfirmasi Peserta Ujian Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,9 +18,26 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <div class="flex items-center justify-center">
-            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>Ujian Belum Terbuka</button>
-        </div>
+        <form id="confirmationForm">
+            <div class="mb-4">
+                <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
+                <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="">Pilih Mata Pelajaran</option>
+                    <option value="X Bahasa Inggris">X Bahasa Inggris</option>
+                    <option value="XI Bahasa Inggris">XI Bahasa Inggris</option>
+                    <option value="XII Bahasa Inggris">XII Bahasa Inggris</option>
+                    <!--
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    
+                    -->
+                </select>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Konfirmasi</button>
+            </div>
+        </form>
     </div>
 
     <script>
@@ -30,6 +47,17 @@
             const formattedDateTime = now.toLocaleDateString('id-ID', options);
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
+        document.getElementById('confirmationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const subject = document.getElementById('subject').value;
+            if (subject === 'X Bahasa Inggris') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSefXGiQJzw1Q8URqPsfoEYa1HTGN9RXz76CAmPbA6PKD1yJGw/viewform?usp=sf_link';
+            } else if (subject === 'XI Bahasa Inggris') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfiJbpegSNsPAxbvXQkxH1BqUVC7pEu7Juj9KCO-NNkeeE8fw/viewform?usp=sf_link';
+            } else if (subject === 'XII Bahasa Inggris') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfrKi0_d4Kj09N-aYlEzSeY1hQwPghHGZuQnIn-7raFEE1lyg/viewform?usp=sf_link';
+            } 
+        });
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
