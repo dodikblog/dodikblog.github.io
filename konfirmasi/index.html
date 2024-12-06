@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Sumatif</title>
+    <title>Konfirmasi Peserta Ujian Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,9 +18,37 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <div class="flex items-center justify-center">
-            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>Ujian Belum Terbuka</button>
-        </div>
+        <form id="confirmationForm">
+            <div class="mb-4">
+                <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
+                <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="">Pilih Mata Pelajaran</option>
+                    <option value="X DPK TSM">X DPK TSM</option>
+                    <option value="X DPK TKJ">X DPK TKJ</option>
+                    <option value="X DPK LPKC">X DPK LPKC</option>
+                    <option value="X DPK LPKKK">X DPK LPKKK</option>
+                    <option value="X DPK DKV">X DPK DKV</option>
+                    <option value="XI KK TSM">XI KK TSM</option>
+                    <option value="XI KK TKJ">XI KK TKJ</option>
+                    <option value="XI KK AKC">XI KK AKC</option>
+                    <option value="XI KK FKK">XI KK FKK</option>
+                    <option value="XI KK DKV">XI KK DKV</option>
+                    <option value="XII KK TSM">XII KK TSM</option>
+                    <option value="XII KK TKJ">XII KK TKJ</option>
+                    <option value="XII KK AKC">XII KK AKC</option>
+                    <option value="XII KK FKK">XII KK FKK</option>
+                    <option value="XII KK DKV">XII KK DKV</option>                 
+                    
+                    <!--
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    -->
+                </select>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Konfirmasi</button>
+            </div>
+        </form>
     </div>
 
     <script>
@@ -30,6 +58,41 @@
             const formattedDateTime = now.toLocaleDateString('id-ID', options);
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
+        document.getElementById('confirmationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const subject = document.getElementById('subject').value;
+            if (subject === 'X DPK TSM') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfTHF_mqzD-TSdXmJDsN8qBHKh_T2YDDJ_eF9ZDm-TEkxEWdQ/viewform?usp=sf_link';
+            } else if (subject === 'X DPK TKJ') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfV5ypVVz78soSjz8TGb_6SdJjEm8dRVkYCtzAFUedr9CWDlw/viewform?usp=sf_link';
+            } else if (subject === 'X DPK LPKC') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdnFJcI6JDWtxVSxrCJvMvfbNdjfE5a3ZqMmNibchLiL4jUEQ/viewform?usp=sf_link';
+            } else if (subject === 'X DPK LPKKK') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSek5bwYdxA22Opnp_LRQdTGZmgS2rUlEe3FZlwsReLQNUHj9g/viewform?usp=sf_link';
+            } else if (subject === 'X DPK DKV') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSf4AuJ95JB5apWU54B1lvFsPXhsTES6fRiNUHQLpHa7eSK8fA/viewform?usp=sf_link';
+            } else if (subject === 'XI KK TSM') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfkCqaM5YFtCELlA61-xlyQxGGjME2Znc1Wfy7EgIRxPh0Q-A/viewform?usp=sf_link';
+            } else if (subject === 'XI KK TKJ') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdXHrkjZ2m7r_ZspzF5WfbDlqy-j7ZXTNb5ilk9EkxNRdKWdQ/viewform?usp=sf_link';
+            } else if (subject === 'XI KK AKC') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScSsRLe7DugEHi2uFfLOeIl5Uv_KvetuVk-nHfEvXJgOu3E9w/viewform?usp=sf_link';
+            } else if (subject === 'XI KK FKK') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdGzeQNeJAzCYuCnrmTL821ZlKT2yvXNs0S9amr_IGEnA6nPA/viewform?usp=sf_link';
+            } else if (subject === 'XI KK DKV') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScwicZAe2mXA1HKr-M_4XiFEMkJ43tvqxRXfIDccsuoC_r8qQ/viewform?usp=sf_link';
+            } else if (subject === 'XII KK TSM') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfs2i82C4L_zWtctZCS6HdsZGA59J5MdHyqbgMt0fB2Z4DmLQ/viewform?usp=sf_link';
+            } else if (subject === 'XII KK TKJ') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeWVPff43eQ2qGkG52GL5md_LA7yk7iv7NisbKg7odiqtqeHQ/viewform?usp=sf_link';
+            } else if (subject === 'XII KK AKC') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfZN_jVo_EktPK0gaHIpRultj8rmsXLbxoIsje1BGvnChY1lg/viewform?usp=sf_link';
+            } else if (subject === 'XII KK FKK') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdBPlradM6k7xsAjH8tyJVaDIorC0Nb8wKa-U6PK6rV_Orlrw/viewform?usp=sf_link';
+            } else if (subject === 'XII KK DKV') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScYahyw7SKHLPQw41p0prRQKoTSPNxe1RnpL3rFDT-8pa_XHQ/viewform?usp=sf_link';
+            } 
+        });
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
