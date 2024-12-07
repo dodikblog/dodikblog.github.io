@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Online</title>
+    <title>Konfirmasi Peserta Ujian Sumatif</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,33 +18,9 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <form id="confirmationForm">
-            <div class="mb-4">
-                <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
-                <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                    <option value="">Pilih Mata Pelajaran</option>
-                    <option value="X Projek IPAS">X Projek IPAS</option>
-                    <option value="XI PKK TSM">XI PKK TSM</option>
-                    <option value="XI PKK TKJ">XI PKK TKJ</option>
-                    <option value="XI PKK AKC">XI PKK AKC</option>
-                    <option value="XI PKK FKK">XI PKK FKK</option>
-                    <option value="XI PKK DKV">XI PKK DKV</option>
-                    <option value="XII PKK TSM">XII PKK TSM</option>
-                    <option value="XII PKK TKJ">XII PKK TKJ</option>
-                    <option value="XII PKK AKC">XII PKK AKC</option>
-                    <option value="XII PKK FKK">XII PKK FKK</option>
-                    <option value="XII PKK DKV">XII PKK DKV</option>                 
-                    
-                    <!--
-                    <option value="M">M</option>
-                    <option value="N">N</option>
-                    -->
-                </select>
-            </div>
-            <div class="flex items-center justify-between">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Konfirmasi</button>
-            </div>
-        </form>
+        <div class="flex items-center justify-center">
+            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>Ujian Belum Terbuka</button>
+        </div>
     </div>
 
     <script>
@@ -54,33 +30,6 @@
             const formattedDateTime = now.toLocaleDateString('id-ID', options);
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
-        document.getElementById('confirmationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const subject = document.getElementById('subject').value;
-            if (subject === 'X Projek IPAS') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScDzmQoHj-c_fFpdXF8rN1rfB4IPPcCA9qtfX-yquOz2RLS-w/viewform?usp=sf_link';
-            } else if (subject === 'XI PKK TSM') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfpgvB9pUeYsG0timLWJ0zEGWs6Ooeuad22eSeGVU_6ncwjYw/viewform?usp=sf_link';
-            } else if (subject === 'XI PKK TKJ') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfpcQb9GBwNc0ESzlrggI8SfsIc6B2G4xxhDDWcXpRM2zxVgA/viewform?usp=sf_link';
-            } else if (subject === 'XI PKK AKC') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSepY0XNOVdvk7AUUkBS-y9MhaS5utLkb63_57Bi2MFwdtcmJw/viewform?usp=sf_link';
-            } else if (subject === 'XI PKK FKK') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSepY0XNOVdvk7AUUkBS-y9MhaS5utLkb63_57Bi2MFwdtcmJw/viewform?usp=sf_link';
-            } else if (subject === 'XI PKK DKV') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdxvoU4naUF5sr3W9deWpczfznvPwZbP4CrPxILPPkHeODczA/viewform?usp=sf_link';
-            } else if (subject === 'XII PKK TSM') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSchCGOQMd-HSQxmfYKOEShLNifp3TAvP9eFZSFFO4NAV-qsog/viewform?usp=sf_link';
-            } else if (subject === 'XII PKK TKJ') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSewJXCDbVREb4Q2O7fOrcyhP_muOC3fWsDEqm1EqsAC7LaPmg/viewform?usp=sf_link';
-            } else if (subject === 'XII PKK AKC') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeteSik2D6zb4ijvgAmmWNPxJ4Ly_JEf0ctvTyTrliKykJQug/viewform?usp=sf_link';
-            } else if (subject === 'XII PKK FKK') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfuWo9LIr4jQZP7Rn-YZIZnT07CDin16P5CkOqfzJiLpPi8LQ/viewform?usp=sf_link';
-            } else if (subject === 'XII PKK DKV') {
-                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeeXHxt1TnsOOV9ZJgXsXEOf__h5nAumXy2gTrrBTgfDepfhg/viewform?usp=sf_link';
-            } 
-        });
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
