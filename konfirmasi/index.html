@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konfirmasi Peserta Ujian Sumatif</title>
+    <title>Konfirmasi Peserta Ujian Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,9 +18,33 @@
             <p id="currentDateTime" class="text-gray-700 font-bold"></p>
         </div>
         <h1 class="text-2xl font-bold mb-6 text-center">Konfirmasi Peserta Ujian Sumatif</h1>
-        <div class="flex items-center justify-center">
-            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" disabled>Ujian Belum Terbuka</button>
-        </div>
+        <form id="confirmationForm">
+            <div class="mb-4">
+                <label for="subject" class="block text-gray-700 font-bold mb-2">Mata Pelajaran:</label>
+                <select id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <option value="">Pilih Mata Pelajaran</option>
+                    <option value="X Informatika">X Informatika</option>
+                    <option value="XI MP TSM">XI MP TSM</option>
+                    <option value="XI MP TKJ">XI MP TKJ</option>
+                    <option value="XI MP AKC">XI MP AKC</option>
+                    <option value="XI MP FKK">XI MP FKK</option>
+                    <option value="XI MP DKV">XI MP DKV</option>
+                    <option value="XII MP TSM">XII MP TSM</option>
+                    <option value="XII MP TKJ">XII MP TKJ</option>
+                    <option value="XII MP AKC">XII MP AKC</option>
+                    <option value="XII MP FKK">XII MP FKK</option>
+                    <option value="XII MP DKV">XII MP DKV</option>                 
+                    
+                    <!--
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    -->
+                </select>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Konfirmasi</button>
+            </div>
+        </form>
     </div>
 
     <script>
@@ -30,6 +54,33 @@
             const formattedDateTime = now.toLocaleDateString('id-ID', options);
             document.getElementById('currentDateTime').textContent = formattedDateTime;
         }
+        document.getElementById('confirmationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const subject = document.getElementById('subject').value;
+            if (subject === 'X Informatika') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfUfnWPl4AHhDWd99XN_fwsUURl-9qarS6A3EuRQZh7WqmZtA/viewform?usp=sf_link';
+            } else if (subject === 'XI MP TSM') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfQXo4xcwKLJTkKO3q_FYjACMmVQjBHRkW4o-sWacGn1136Og/viewform?usp=sf_link';
+            } else if (subject === 'XI MP TKJ') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeLXddCxowsuHAJHyPoV8k_arMGfNKN-a8rRg3DuXTXKWEtfA/viewform?usp=sf_link';
+            } else if (subject === 'XI MP AKC') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSda9qhHlgaa-fSSLCF_IHSyI5DdDJKFpKOh0Wi2enana1Ayzg/viewform?usp=sf_link';
+            } else if (subject === 'XI MP FKK') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfaFIQoMUNUC0mO6FyFWMuW5pCYOuQKUg1d2gfaFqSKxrf9ng/viewform?usp=sf_link';
+            } else if (subject === 'XI MP DKV') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfM4Pe8gpg71rP7DwXp8-h6tTjIBgN9nYGqEJr6aQq8EC8fmA/viewform?usp=sf_link';
+            } else if (subject === 'XII MP TSM') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfnCg7oIrn2_9BUKAc8mADz8iLtJ4OU7Jw-OLT7are4Hxx7VQ/viewform?usp=sf_link';
+            } else if (subject === 'XII MP TKJ') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdb3TrvCZH3mZnClUdwhUiHUdUJoIVyiOndcaPKPx7zmA-25g/viewform?usp=sf_link';
+            } else if (subject === 'XII MP AKC') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdDwxr4EciN3eGVEoJFoi19CAl99fBnbwMR3UWrvg_-jJaYQw/viewform?usp=sf_link';
+            } else if (subject === 'XII MP FKK') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfn8Yz6MidXbJoKXioknndxZT8LtsmN_Ssvk1Yet-e7WEhFYw/viewform?usp=sf_link';
+            } else if (subject === 'XII MP DKV') {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfIUDCjtnrPgKXYg-SyC0mT0GpUZdeaxLBQEOC0KUtKKa2HYA/viewform?usp=sf_link';
+            } 
+        });
 
         updateDateTime();
         setInterval(updateDateTime, 1000);
